@@ -34,13 +34,23 @@ function translateString({ i, string }) {
     if (detokenizedString.includes("|")) {
       resolve({ i, string: detokenizedString });
     }
+    const factors =[];
+    if (detokenizedString.includes("^")) {
+      factors = detokenizedString.split('^');
+      detokenizedString = factors[0];
+    }
     translate(
       detokenizedString,
       { from: "en", to: "pt", raw: true }
       // { proxy: { host: "119.82.249.4", port: 58774 } }
     )
       .then(res => {
-        resolve({ i, string: normalizeTokens(res.text, dict) });
+        if (detokenizedString.includes("^")) {
+          resolve({ i, string: normalizeTokens(res.text, dict) + '^' + factors[1] });
+          
+        } else {
+          resolve({ i, string: normalizeTokens(res.text, dict) });
+        }
       })
       .catch(err => {
         console.error(err);
