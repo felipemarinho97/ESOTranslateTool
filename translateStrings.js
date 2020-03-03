@@ -11,8 +11,8 @@ function extractTokens(originalText) {
 
   if (tokens)
     tokens.forEach((token, i) => {
-      text = text.replace(token, `<<PC${i}>>`);
-      dict[`<<PC${i}>>`] = token;
+      text = text.replace(token, `<<${i}>>`);
+      dict[`<<${i}>>`] = token;
     });
 
   return { text, dict };
