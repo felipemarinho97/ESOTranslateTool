@@ -1,0 +1,14 @@
+{
+  "name": "ESOExtract",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@k3rn31p4nic/google-translate-api": "^1.1.0",
+    "@vitalets/google-translate-api": "^3.0.0",
+    "csv-parse": "^4.8.7",
+    "rxjs": "^6.5.4",
+    "simple-eta": "^3.0.2",
+    "tiny-async-pool": "^1.1.0"
+  }
+}
