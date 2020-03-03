@@ -89,7 +89,10 @@ result.subscribe(dialog => {
 
 function exitProgram() {
   fs.writeFileSync("translated.json", JSON.stringify(translated, null, 4));
-  console.log("\nEscrevendo no disco.");
+
+  const percentage = ((translated.length / array.length) * 100).toFixed(2);
+
+  console.log(`\nEscrevendo no disco. Finalizando em ${percentage}%`);
   process.exit();
 }
 
