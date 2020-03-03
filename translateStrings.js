@@ -28,13 +28,14 @@ function normalizeTokens(text, dict) {
 }
 
 function translateString({ i, string }) {
-  const { text: detokenizedString, dict } = extractTokens(string);
+  const { text: detokenizedString0, dict } = extractTokens(string);
+  let detokenizedString = detokenizedString0;
 
   return new Promise(resolve => {
     if (detokenizedString.includes("|")) {
       resolve({ i, string: detokenizedString });
     }
-    const factors =[];
+    let factors =[];
     if (detokenizedString.includes("^")) {
       factors = detokenizedString.split('^');
       detokenizedString = factors[0];
