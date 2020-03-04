@@ -1,8 +1,8 @@
 const { translateStrings } = require("./translateStrings");
 const { of } = require("rxjs");
 const { mergeMap, finalize } = require("rxjs/operators");
-const fs = require("fs");
 const makeEta = require("simple-eta");
+const fs = require("fs");
 
 // const parse = require("csv-parse/lib/sync");
 
