@@ -46,7 +46,7 @@ function translateString({ i, string }) {
       // { proxy: { host: "119.82.249.4", port: 58774 } }
     )
       .then(res => {
-        if (detokenizedString.includes("^")) {
+        if (detokenizedString0.includes("^")) {
           resolve({ i, string: normalizeTokens(res.text, dict) + '^' + factors[1] });
           
         } else {

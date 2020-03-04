@@ -91,6 +91,8 @@ function exitProgram() {
   fs.writeFileSync("translated.json", JSON.stringify(translated, null, 4));
 
   const percentage = ((translated.length / array.length) * 100).toFixed(2);
+  
+  fs.writeFileSync("percentage.log", `${percentage}%`);
 
   console.log(`\nEscrevendo no disco. Finalizando em ${percentage}%`);
   process.exit();
